@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>虚拟币交易平台</title>
+    <link rel="stylesheet" type="text/css" href="resources/all.css"/>
+</head>
+<body class="noReady">
+	
+<div class="banner">
+	<h1>虚拟币交易平台</h1>
+	<ul>
+		<li><a>首页</a></li>
+		<li><a>交易</a></li>
+		<li><a>理财</a></li>
+		<li><a>新手</a></li>
+	</ul>
+</div>
+<div class="buttn-line"></div>
+
+<div class="container">
+	<div class="left-container">
+		<div class="chart"></div>
+		<div class="trade">
+			<div class="half">
+				<div class="trade-title">
+					<span>买入盘面</span>
+					<select v-model="selectBuy">
+						<option v-repeat="option in options" value="{{option.value}}">{{option.text}}</option>
+					</select>
+				</div>
+				<table>
+					<colgroup>
+	                    <col width="100">
+	                    <col width="150">
+	                    <col width="150">
+	                    <col width="150">
+	                </colgroup>
+					<thead>
+						<tr>
+							<th>档位</th>
+							<th>买入价</th>
+							<th>买入量</th>
+							<th>总额</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr v-repeat="list in buys">
+							<td v-text="list['C1']"></td>
+							<td v-text="list['C2']">/td>
+							<td v-text="list['C3']"></td>
+							<td v-text="list['C4']"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="half">
+				<div class="trade-title">
+					<span>卖出盘面</span>
+					<select v-model="selectSale">
+						<option v-repeat="option in options" value="{{option.value}}">{{option.text}}</option>
+					</select>
+				</div>
+				<table>
+					<colgroup>
+	                    <col width="100">
+	                    <col width="150">
+	                    <col width="150">
+	                    <col width="150">
+	                </colgroup>
+					<thead>
+						<tr>
+							<th>档位</th>
+							<th>买入价</th>
+							<th>买入量</th>
+							<th>总额</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr v-repeat="list in sales">
+							<td v-text="list['C1']"></td>
+							<td v-text="list['C2']">/td>
+							<td v-text="list['C3']"></td>
+							<td v-text="list['C4']"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="right-container">
+		<div class="product-title">
+			<span>名称</span>
+			<select>
+				<option>排序</option>
+				<option>默认排序</option>
+				<option>按交易量排序</option>
+				<option>按涨跌幅排序</option>
+			</select>
+		</div>
+		<table>
+			<colgroup>
+                <col width="100">
+                <col width="80">
+                <col width="50">
+            </colgroup>
+            <tbody>
+            	<tr v-repeat="list in products">
+            		<td class="font-left" v-text="list['C1']"></td>
+            		<td v-text="list['C2']"></td>
+            		<td class="font-right" v-text="list['C3']"></td>
+            	</tr>
+            </tbody>
+		</table>
+	</div>
+</div>
+
+<script src="../jquery/amd/require.js" data-main="src"></script>
+<script src="../jquery/amd/cfg.js"></script>
+</body>
+</html>
