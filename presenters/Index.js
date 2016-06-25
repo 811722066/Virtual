@@ -1,4 +1,9 @@
-define(['presenter_base', '../repositories/Index','vue'], function (base, repository, vue, tpl) {
+define([
+	'presenter_base',
+	'../repositories/Index',
+	'vue',
+	'../components/indexChart'
+	], function (base, repository, vue, indexChart) {
     return base.extend(function () {
     	this.createViewModels();
         this.view.on('init', this.onInitPage.bind(this));
@@ -33,6 +38,9 @@ define(['presenter_base', '../repositories/Index','vue'], function (base, reposi
 		            this.getBuyData();
 		            this.getSaleData();
 		            this.getProductData();
+		        },
+		        components: {
+		        	indexChart: indexChart
 		        },
         		methods: {
         			getBuyData:function(){

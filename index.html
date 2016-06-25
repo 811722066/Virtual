@@ -20,14 +20,14 @@
 
 <div class="container">
 	<div class="left-container">
-		<div class="chart"></div>
+		<div class="chart">
+			<index-chart></index-chart>
+		</div>
 		<div class="trade">
 			<div class="half">
 				<div class="trade-title">
 					<span>买入盘面</span>
-					<select v-model="selectBuy">
-						<option v-repeat="option in options" value="{{option.value}}">{{option.text}}</option>
-					</select>
+					<select v-model="selectBuy" options="options"></select>
 				</div>
 				<table>
 					<colgroup>
@@ -57,9 +57,7 @@
 			<div class="half">
 				<div class="trade-title">
 					<span>卖出盘面</span>
-					<select v-model="selectSale">
-						<option v-repeat="option in options" value="{{option.value}}">{{option.text}}</option>
-					</select>
+					<select v-model="selectSale" options="options"></select>
 				</div>
 				<table>
 					<colgroup>
