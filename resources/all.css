@@ -53,6 +53,7 @@ dd {
 }
 .chart {
 	height: 300px;
+	border: 1px solid #676767;
 	margin-top: 20px;
 }
 .trade {
@@ -119,52 +120,10 @@ dd {
 	font-size: 16px;
 	line-height: 40px;
 	border-bottom: 1px solid #ECF4FD;
-	padding:0px 10px;
-}
-.right-container table tr:hover{
-	background-color: #9EE0CE;
-	cursor: pointer;
 }
 .font-left {
 	text-align: left;
 }
-.font-center {
-	text-align: center;
-}
 .font-right {
 	text-align: right;
 }
-.font-green {
-	color: green;
-}
-.font-red {
-	color: red;
-}
-/****************index-chart****************/
-.chart ul{
-	height: 40px;
-	border-bottom: 1px solid #666;
-}
-.chart ul li{
-	width: 150px;
-	line-height: 39px;
-	text-align: center;
-	float: left;
-	display: block;
-	cursor: pointer;
-}
-.chart ul li:first-child {
-	margin-left: 30px;
-}
-.chart ul li:hover{
-	background-color: #f7f7f9;
-}
-.chart .active{
-	border: 1px solid #666;
-	border-bottom: 1px solid #FFF;
-}
-.chart-tabs{
-	height:100%;
-	background-color: #FFF;
-}
-

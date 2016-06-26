@@ -21,12 +21,12 @@
 <div class="container">
 	<div class="left-container">
 		<div class="chart">
-			<index-chart product-name="{{shortName}}"></index-chart>
+			<index-chart></index-chart>
 		</div>
 		<div class="trade">
 			<div class="half">
 				<div class="trade-title">
-					<span>买入盘面{{shortName}}</span>
+					<span>买入盘面</span>
 					<select v-model="selectBuy" options="options"></select>
 				</div>
 				<table>
@@ -89,7 +89,12 @@
 	<div class="right-container">
 		<div class="product-title">
 			<span>名称</span>
-			<select v-model="defaultOrder" options="orderOptions"></select>
+			<select>
+				<option>排序</option>
+				<option>默认排序</option>
+				<option>按交易量排序</option>
+				<option>按涨跌幅排序</option>
+			</select>
 		</div>
 		<table>
 			<colgroup>
@@ -98,10 +103,10 @@
                 <col width="50">
             </colgroup>
             <tbody>
-            	<tr v-repeat="list in products | orderBy defaultOrder -1" v-on="click:shortName=list['C4']">
+            	<tr v-repeat="list in products">
             		<td class="font-left" v-text="list['C1']"></td>
-            		<td class="font-center" v-class="list['C3']>=0?'font-green':'font-red'" v-text="list['C2']"></td>
-            		<td class="font-right" v-class="list['C3']>=0?'font-green':'font-red'" v-text="list['C3']"></td>
+            		<td v-text="list['C2']"></td>
+            		<td class="font-right" v-text="list['C3']"></td>
             	</tr>
             </tbody>
 		</table>

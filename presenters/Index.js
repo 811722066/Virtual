@@ -32,19 +32,7 @@ define([
         			},{
         				text:'显示15条',
         				value:'15',
-        			}],
-        			defaultOrder:'0',
-        			orderOptions:[{
-        				text: '默认排序',
-        				value: '0'
-        			},{
-        				text: '按交易量排序',
-        				value: 'C2'
-        			},{
-        				text: '按涨跌幅排序',
-        				value: 'C3'
-        			}],
-        			shortName:'BTC'
+        			}]
         		},
         		created: function () {
 		            this.getBuyData();
@@ -75,10 +63,7 @@ define([
 			        	$.getJSON('./json/Product.json',function(result){
         					this.products = result;
 			        	}.bind(this));
-        			},
-        			/*details: function(val){
-						this.productLogo = val;
-					}*/
+        			}
         		},
         		ready: function(){
                     //that.view.setContainerHeight();
@@ -90,10 +75,6 @@ define([
                 	},
                 	"selectSale": function(){
                 		this.getSaleData();
-                	},
-                	"shortName": function(){
-                		this.getBuyData();
-		           		this.getSaleData();
                 	}
                 }
         	});
